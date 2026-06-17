@@ -47,7 +47,7 @@ function getDataFromContactUsForm() {
 async function sendDataToServer(data) {
     try {
         showBtnPreLoader(contactUsSubmitButton, true, '');
-        const response = await fetch(`${window.API_BASE_URL}/contact-us`, {
+        const response = await fetch('/contact-us', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -1,11 +1,5 @@
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig, MessageType
 import os
-import random
-
-async def generate_otp(length: int = 6) -> str:
-    digits = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    otp = ''.join(random.choices(digits, k=length))
-    return otp
     
 conf = ConnectionConfig(
     MAIL_USERNAME=os.getenv("SMTP_USER"),

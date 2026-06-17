@@ -8,7 +8,7 @@ let selectedUserType = null;
 
 function handleCredentialResponse(response) {
     const idToken = response.credential;
-    fetch(`${window.API_BASE_URL}/auth/google-sign-in`, {
+    fetch('/auth/google-sign-in', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

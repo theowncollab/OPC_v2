@@ -11,7 +11,7 @@ function getCookie(name) {
 
 async function refreshToken() {
   try {
-    const response = await fetch(`${window.API_BASE_URL}/auth/refresh`, {
+    const response = await fetch('/auth/refresh', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${getCookie('refreshToken')}`,
