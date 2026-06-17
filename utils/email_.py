@@ -1,5 +1,6 @@
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig, MessageType
 import os
+import random
 
 async def generate_otp(length: int = 6) -> str:
     digits = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
