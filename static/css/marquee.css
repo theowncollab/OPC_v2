@@ -1,0 +1,52 @@
+#marquee {
+    width: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#marquee-container {
+    width: 80%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0rem;
+}
+
+.marquee-track {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-item {
+    width: max-content;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    white-space: nowrap;
+    padding: 1rem 5rem;
+    font-size: 10rem;
+    line-height: 14rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgba(255, 235, 59, 0.5);
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-249.5%);
+    }
+}

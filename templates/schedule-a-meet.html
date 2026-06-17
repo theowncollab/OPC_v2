@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}OPC | Schedule A Meet{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="/static/css/schedule-a-meet.css">
+<link rel="stylesheet" href="/static/images/favicons/favicon.ico">
+{% endblock %}
+
+
+{% block content %}
+<!-- Schedule A Meet Section Start -->
+<section id="schedule-a-meet-container">
+    <div id="why-schedule-a-meet">
+        <div id="why-text">
+            <div id="why-logo">
+                <img src="/static/images/logo.png" alt="OPC Logo" />
+                <span>Own Professional Collaboration</span>
+            </div>
+            <div id="why-slogan">
+                <span>we want to ensure a seamless collaboration experience.</span>
+                <span>so to go an extra mile, we offer personalized meetings.</span>
+                <span>clear out any doubts or questions you may have.</span>
+                <span id="why-disclaimer">* for the sake of convenience, we will be scheduling the meet on google
+                    meet.</span>
+            </div>
+            <div id="why-extra">
+                <span>No questions? then try </span><button type="button" id="schedule-a-meet-sign-in-btn">SIGN
+                    IN <i class='bx  bx-arrow-right-stroke'></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="schedule-the-meet">
+        <div id="title">
+            <span>Schedule a meeting</span>
+        </div>
+        <div id="description">
+            <span>
+                You will receive a confirmation email with the Google Meet link and details shortly after submitting
+                the form.
+                Please note that meeting slots are subject to availability.<br>We look forward to connecting with
+                you!
+            </span>
+        </div>
+        <form>
+            <div class="input-box">
+                <input type="text" id="name" placeholder="" required />
+                <label for="name">Name *</label>
+            </div>
+            <div class="input-box">
+                <input type="text" id="email" placeholder="" required />
+                <label for="email">Email *</label>
+            </div>
+            <select name="type" id="type">
+                <option value="" disabled selected>Select User Type</option>
+                <option value="creator">Creator</option>
+                <option value="brand">Brand</option>
+                <option value="event_partner">Event Partner</option>
+            </select>
+            <div class="input-inliner">
+                <div class="input-box">
+                    <input type="date" id="date" placeholder="" required />
+                    <label for="date">Date *</label>
+                </div>
+                <div class="input-box">
+                    <select name="time" id="time">
+                        <option value="" disabled selected>Select Time Slot *</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="submit" id="schedule-meet-form-btn">SCHEDULE THE MEET <i
+                        class='bx  bx-arrow-right-stroke'></i></button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- Schedule A Meet Section End -->
+{% endblock %}
+
+
+{% block script %}
+<script src="https://www.googletagmanager.com/gtag/js?id=G-RF9XCV2ZMN"></script>
+<script>
+    window.GSCRIPT_URL = "{{ GSCRIPT_URL }}";
+</script>
+<script type="module" src="/static/js/schedule-a-meet.js"></script>
+{% endblock %}

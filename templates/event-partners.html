@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block title %}OPC | Event Partners{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="/static/css/event_partners.css">
+<link rel="stylesheet" href="/static/images/favicons/favicon.ico">
+{% endblock %}
+
+
+{% block content %}
+<!-- Title Section Start -->
+    <section id="title-section">
+        <div>
+            <span>Powering partnerships. Amplifying impact.</span>
+        </div>
+    </section>
+    <!-- Title Section End -->
+
+    <!-- Hero Section Start -->
+    <section id="ep-hero-section">
+        <div id="ep-hero-right">
+            <img src="/static/images/events-bg.jpg" alt="Events Hero Image" />
+        </div>
+        <div id="ep-hero-left">
+            <div id="ep-hero-left-top">
+                <div id="ep-hero-left-top-title">EVENT PARTNERS,</div>
+            </div>
+            <div id="ep-hero-left-bottom">
+                <div id="ep-hero-left-bottom-text">
+                    At OPC, we believe sponsors & partners are the backbone of impactful experiences in any event,
+                    enhancing engagement while earning visibility, credibility, and trust with targeted audiences.
+                </div>
+                <div id="ep-hero-left-bottom-btns">
+                    <button type="button" id="ep-hero-schedule-a-meet-btn">SCHEDULE A MEET <i
+                            class='bx  bx-arrow-right-stroke'></i></button>
+                    <a href="./terms-and-conditions.html">OUR TERMS & CONDITIONS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Main Section Start -->
+    <section id="ep-main-content">
+        <div id="ep-main-content-title">
+            <span>Why work with us?</span>
+            <span>Here's a glimpse of the many perks you’ll enjoy when you <a href="sign-in.html">join us.</a></span>
+        </div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="ep-card-image">
+                        <img src="/static/images/ep-why-us-1.png" alt="">
+                    </div>
+                    <div class="ep-card-text">
+                        <span>Access to relevant campaigns.</span>&nbsp;We connect you with events whose values and
+                        audiences align with your sponsorship goals.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="ep-card-image">
+                        <img src="/static/images/ep-why-us-2.png" alt="">
+                    </div>
+                    <div class="ep-card-text">
+                        <span>Boost brand visibility.</span>&nbsp;Be featured in campaigns, events, and influencer-led
+                        initiatives that guarantee genuine engagement.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="ep-card-image">
+                        <img src="/static/images/ep-why-us-3.png" alt="">
+                    </div>
+                    <div class="ep-card-text">
+                        <span>Flexible sponsorship models.</span>&nbsp;Choose from one-time campaigns, event
+                        sponsorships, or long-term brand partnerships tailored to your budget and objectives.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="ep-card-image">
+                        <img src="/static/images/ep-why-us-4.png" alt="">
+                    </div>
+                    <div class="ep-card-text">
+                        <span>Data-Backed results.</span>&nbsp;Track your sponsorship performance with transparent
+                        analytics and ROI-focused reporting.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="ep-card-image">
+                        <img src="/static/images/ep-why-us-5.png" alt="">
+                    </div>
+                    <div class="ep-card-text">
+                        <span>Seamless management.</span>&nbsp;We handle the details — from negotiations and agreements
+                        to execution and post-campaign reporting.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-left-right">
+            <span class="scroll-left"><i class='bx  bx-chevron-left'></i></span>
+            <span class="scroll-right"><i class='bx  bx-chevron-right'></i></span>
+        </div>
+    </section>
+    <!-- Main Section End -->
+
+    <!-- Requirements Section Start -->
+    <section id="ep-requirements">
+        <div id="ep-requirements-content">
+            <span>Which events do we offer?</span>
+            <span>We offer a variety of events to choose from — to both brands and sponsors. <span>Some of the key
+                    categories include:</span></span>
+        </div>
+        <div id="ep-requirements-list">
+            <div><i class='bx  bx-party'></i> College Festivals</div>
+            <div><i class='bx  bx-music'></i> Musical Concerts</div>
+            <div><i class='bx  bx-dress'></i> Fashion Events</div>
+            <div><i class='bx  bx-donate-blood'></i> Charitable Events</div>
+            <div><i class='bx  bx-enterprise'></i> Corporate Events</div>
+            <div><i class='bx  bx-yin-yang'></i> Cultural Events</div>
+            <div><i class='bx  bx-video-cinema'></i> Theatre Productions</div>
+            <div><i class='bx  bx-gallery-vertical-end'></i> Art Exhibitions</div>
+            <div><i class='bx  bx-football-kick'></i> Sports Events</div>
+        </div>
+        <!-- <div id="ep-many-more">
+            <span>Check the full list</span><i class='bx  bx-chevron-right'  ></i>
+        </div> -->
+    </section>
+    <!-- Requirements Section End -->
+
+
+    <!-- Corporate Sponsors Section Start -->
+    <section id="ep-corporate-sponsors">
+        <section id="ep-corporate-sponsors-content">
+            <div id="ep-corporate-sponsors-title">Corporate Sponsors,</div>
+            <div id="ep-corporate-sponsors-body">
+                <div id="ep-corporate-sponsors-text">
+                    <div id="ep-corporate-sponsors-description">If you are a corporate or a startup, we have many event
+                        opportunities for you to sponsor, that can help in brand building and marketing.</div>
+                    <div id="ep-corporate-sponsors-contact">Want to sponsor upcoming events? Contact Us!</div>
+                    <div id="ep-corporate-sponsors-btns">
+                        <button type="button" id="ep-corporate-sponsors-schedule-a-meet-btn">
+                            SCHEDULE A MEET <i class='bx  bx-arrow-right-stroke'></i>
+                        </button>
+                        <button type="button" id="ep-corporate-sponsors-register-updates-btn">
+                            REGISTER FOR REGULAR UPDATES <i class='bx  bx-arrow-right-stroke'></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="ep-corporate-sponsors-image"><img src="/static/images/corporate-sponsors.png" alt=""></div>
+            </div>
+        </section>
+    </section>
+    <!-- Corporate Sponsors Section End -->
+
+    <!-- Event Registration Section Start -->
+    <section id="ep-event-registration">
+        <section id="ep-event-registration-content">
+            <div id="ep-event-registration-text">
+                <span id="ep-event-registration-title">Looking for sponsors for your event?</span>
+                <span id="ep-event-registration-description">We can help you find the right sponsors to make your event
+                    a success. Register your event with us and get access to a wide range of sponsors who are looking
+                    for opportunities to showcase their brand.</span>
+                <button type="button" id="event-register-btn">REGISTER YOUR EVENT <i
+                        class='bx  bx-arrow-right-stroke'></i></button>
+            </div>
+        </section>
+    </section>
+    <!-- Event Registration Section End -->
+
+    <!-- Conclusion Section Start -->
+    <section id="ep-conclusion">
+        <video src="/static/videos/br-bg.mp4" loop muted autoplay></video>
+        <div id="ep-conclusion-content">
+            <span>Join Our Sponsorship Network</span><span>We help event partners and sponsors discover the right
+                opportunities to showcase their value while ensuring every collaboration delivers measurable
+                impact.</span>
+        </div>
+    </section>
+    <!-- Conclusion Section End -->
+{% endblock %}
+
+
+{% block script %}
+<script src="https://www.googletagmanager.com/gtag/js?id=G-RF9XCV2ZMN"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="/static/js/event_partners.js"></script>
+{% endblock %}

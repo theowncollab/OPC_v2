@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF9XCV2ZMN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RF9XCV2ZMN');
+    </script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.10/dist/lenis.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/marquee.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/vertical_links.css">
+    <!-- icon for page -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicons/favicon.ico">
+    <script>
+        window.API_BASE_URL = "{{ API_BASE_URL }}";
+    </script>
+    <title>{% block title %}OPC{% endblock %}</title>
+    {% block style %}{% endblock %}
+    <link rel="stylesheet" href="/static/css/responsive.css?v=13">
+</head>
+
+<body>
+
+    <!-- Header Section Start -->
+    {% include "header.html" %}
+    <!-- Header Section End -->
+
+    <!-- Left Email Div Start -->
+    <div id="left-fixed-links">
+        <span id="contact">CONTACT US</span>
+        <span id="mail-id"><i class='bx bx-mail-open'></i></span>
+    </div>
+    <!-- Left Email Div End -->
+
+    <!-- Right Socials Div Start -->
+    <div id="right-fixed-links">
+        <span id="social-instagram"><i class='bxl bx-instagram'></i></span>
+        <span id="social-facebook"><i class='bxl bx-facebook'></i></span>
+        <span id="social-twitter"><i class='bxl bx-twitter-x'></i></span>
+    </div>
+    <!-- Right Socials Div End -->
+
+    <!-- Main Content Start -->
+    {% block content %}{% endblock %}
+    <!-- Main Content End -->
+
+    <!-- Marquee Start -->
+    <div id="marquee">
+        <div id="marquee-container">
+            <div class="marquee-track">
+                <div class="marquee-item">BRANDS</div>
+                <div class="marquee-item">CREATORS</div>
+                <div class="marquee-item">EVENTS</div>
+                <div class="marquee-item">OPC</div>
+                <div class="marquee-item">BRANDS</div>
+                <div class="marquee-item">CREATORS</div>
+                <div class="marquee-item">EVENTS</div>
+                <div class="marquee-item">OPC</div>
+                <div class="marquee-item">BRANDS</div>
+            </div>
+        </div>
+    </div>
+    <!-- Marquee End -->
+
+    <!-- Footer Section Start -->
+    {% include "footer.html" %}
+    <!-- Footer Section End -->
+
+    <script src="https://unpkg.com/lenis@1.3.10/dist/lenis.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/header.js"></script>
+    <script src="/static/js/vertical-links.js"></script>
+    <script src="/static/js/footer.js"></script>
+    <script src="/static/js/mobile-menu.js?v=2"></script>
+    {% block script %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,1385 @@
+/* ============================================
+   OPC RESPONSIVE STYLES
+   Polished mobile-first responsive overrides
+   Breakpoints: 1024px, 768px, 480px
+   ============================================ */
+
+/* Add viewport meta support */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Hide mobile-only elements on desktop */
+#mobile-menu-btn {
+    display: none;
+}
+
+.mobile-menu-overlay {
+    display: none;
+}
+
+/* ---- SMALL LAPTOP (max-width: 1024px) ---- */
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 87.5% !important;
+    }
+}
+
+/* ---- TABLET & MOBILE (max-width: 768px) ---- */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 81.25% !important;
+    }
+
+    body {
+        max-width: 100vw !important;
+        width: 100% !important;
+    }
+
+    /* ===========================
+       HEADER — Hamburger Menu
+       =========================== */
+    header {
+        height: auto;
+        min-height: 56px;
+        padding: 0;
+    }
+
+    nav {
+        padding: 0.75rem 5%;
+        gap: 0;
+        flex-wrap: nowrap;
+        justify-content: space-between !important;
+    }
+
+    /* Hide nav links on mobile — they go into the overlay */
+    nav > div:not(#logo):not(#mobile-menu-btn):not(#sign-in) {
+        display: none !important;
+    }
+
+    #logo {
+        width: auto;
+        order: 0;
+        margin-right: auto !important; /* Pushes sign-in and hamburger to the right */
+    }
+
+    /* Style sign-in for mobile header */
+    #sign-in {
+        order: 1;
+        margin-right: 1rem !important;
+    }
+
+    #sign-in button {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.8rem;
+        white-space: nowrap;
+        border: 1px solid rgba(255, 235, 59, 0.5);
+        border-radius: 0.25rem;
+        background: transparent;
+        color: rgba(255, 235, 59, 0.9);
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+    }
+
+    #mobile-menu-btn {
+        order: 2;
+    }
+
+    #logo {
+        width: auto;
+        order: 0;
+    }
+
+    #logo img {
+        width: 6rem;
+        filter: drop-shadow(0 0 0.5rem rgba(255, 235, 59, 0.4)) sepia(1) saturate(6) hue-rotate(-20deg) brightness(0.9);
+    }
+
+    /* Hamburger icon button */
+    #mobile-menu-btn {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1100;
+        color: rgba(255, 235, 59, 0.8);
+        font-size: 2rem;
+        padding: 0.25rem;
+        border: 1px solid rgba(255, 235, 59, 0.3);
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+        background: transparent;
+    }
+
+    #mobile-menu-btn:hover,
+    #mobile-menu-btn:active {
+        background: rgba(255, 235, 59, 0.1);
+        border-color: rgba(255, 235, 59, 0.6);
+    }
+
+    /* Mobile overlay menu */
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(13, 13, 13, 0.97);
+        z-index: 1050;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-overlay a {
+        color: rgba(255, 235, 59, 0.85);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0.75rem 2rem;
+        border-bottom: 1px solid rgba(255, 235, 59, 0.1);
+        transition: all 0.3s ease;
+        width: 70%;
+        text-align: center;
+    }
+
+    .mobile-menu-overlay a:hover,
+    .mobile-menu-overlay a:active {
+        color: rgba(255, 235, 59, 1);
+        border-bottom-color: rgba(255, 235, 59, 0.5);
+        transform: scale(1.05);
+    }
+
+    .mobile-menu-overlay .mobile-menu-sign-in {
+        margin-top: 1rem;
+        padding: 1rem 3rem;
+        border: 1px solid rgba(255, 235, 59, 0.6);
+        border-radius: 0.25rem;
+        background: transparent;
+        color: rgba(255, 235, 59, 0.9);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.15rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .mobile-menu-overlay .mobile-menu-sign-in:hover {
+        background: rgba(255, 235, 59, 0.15);
+        border-color: rgba(255, 235, 59, 0.9);
+    }
+
+    .mobile-menu-close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        color: rgba(255, 235, 59, 0.7);
+        font-size: 2.5rem;
+        cursor: pointer;
+        z-index: 1060;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-close:hover {
+        color: rgba(255, 235, 59, 1);
+        transform: rotate(90deg);
+    }
+
+    /* ===========================
+       VERTICAL FIXED LINKS — HIDE
+       =========================== */
+    #left-fixed-links,
+    #right-fixed-links {
+        display: none !important;
+    }
+
+    /* ===========================
+       INDEX HERO — Complete redesign
+       =========================== */
+    /* Keep hero background image visible with dark overlay */
+    #hero-wrapper-duplicate {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.35;
+    }
+
+    /* ===========================
+       INDEX HERO — Grid Reordering
+       We use display: contents to break out of child divs so we can reorder everything!
+       =========================== */
+    #hero-wrapper-1 {
+        height: auto;
+        min-height: auto;
+        display: flex !important;
+        flex-direction: column;
+        background: rgba(13, 13, 13, 0.85);
+        gap: 1.5rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    #hero-left, #hero-left-top, #hero-left-top-left, #hero-left-bottom, #hero-right {
+        display: contents !important;
+    }
+
+    /* 1. Main Text */
+    #hero-left-top-left span.above {
+        order: 2;
+        width: 100%;
+        height: auto;
+        padding: 0 5%;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        text-align: center !important;
+        display: block;
+        margin-bottom: -0.3rem;
+    }
+    
+    #hero-left-top-left .big-letter {
+        font-size: 1.7rem !important;
+        line-height: 1.8rem !important;
+    }
+
+    /* 2. Main Title (OPC) */
+    #main-title {
+        order: 1;
+        width: 100%;
+        padding: 0 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* 3. Paragraph */
+    #hero-left-top-left span.below {
+        order: 3;
+        width: 100%;
+        text-wrap: wrap;
+        font-size: 0.95rem;
+        line-height: 1.4rem;
+        text-align: center;
+        display: block;
+        padding: 0 5%;
+        margin-top: 0;
+    }
+    
+    /* Disable <br> for proper mobile wrapping */
+    #hero-left-top-left span.below br {
+        display: none !important;
+    }
+
+    /* 4. Buttons */
+    #main-links {
+        order: 4;
+        width: 100%;
+        padding: 0 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    /* Removed unused old wrappers */
+    #hero-left-bottom #main-title #name {
+        font-size: 4rem !important;
+        line-height: 4rem !important;
+    }
+
+    /* 3,4,5. Pills */
+    #hero-left-top-right,
+    #hero-middle,
+    #hero-right-top {
+        width: max-content !important;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+        color: rgba(255, 235, 59, 1);
+        padding: 0.75rem 1.5rem !important;
+        background: rgba(255, 235, 59, 0.05) !important;
+        border: 1px solid rgba(255, 235, 59, 0.2) !important;
+        border-radius: 2rem !important;
+    }
+
+    /* Remove specific desktop padding-top for first and last child spans */
+    #hero-left-top-right span,
+    #hero-middle span,
+    #hero-right-top span {
+        padding-top: 0 !important;
+        line-height: 1 !important;
+    }
+
+    #hero-left-top-right {
+        order: 5;
+    }
+
+    #hero-middle {
+        order: 6;
+    }
+
+    #hero-right-top {
+        order: 7;
+    }
+
+    /* 6. Conclusion text at bottom */
+    #hero-right-bottom {
+        order: 8;
+        width: 100%;
+        padding: 1rem 5%;
+        font-size: 0.95rem;
+        line-height: 1.5rem;
+        text-align: center;
+        align-items: center !important;
+    }
+
+    /* Hide decorative horizontal lines on mobile */
+    .horr-line, .adj, .adj-padd, .adj-horr {
+        display: none !important;
+    }
+
+    /* Hide spacer divs */
+    /* .adj, .adj-padd, .adj-horr {
+        display: none !important;
+    } */ /* This rule is now merged above */
+
+    /* Left section = main content */
+    /* #hero-left {
+        width: 100%;
+        height: auto;
+        order: 1;
+    } */ /* This rule is now part of the grid reordering */
+
+    /* #hero-left-top {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 5% 1rem;
+        background: transparent;
+    } */ /* This rule is now part of the grid reordering */
+
+    /* #hero-left-top-left {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        gap: 0.75rem;
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+    } */ /* This rule is now part of the grid reordering */
+
+    /* #hero-left-top-left span.above {
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+        text-align: center !important;
+    } */ /* This rule is now part of the grid reordering */
+
+    /* #hero-left-top-left span.below {
+        text-wrap: wrap;
+        word-wrap: break-word;
+        font-size: 0.75rem;
+        line-height: 1.2rem;
+        text-align: center;
+    } */ /* This rule is now part of the grid reordering */
+
+    /* Vertical navigation labels become horizontal pills */
+    /* #hero-left-top-right {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 1rem 0 0;
+        background: transparent;
+        box-shadow: none;
+    } */ /* This rule is now part of the grid reordering */
+
+    #hero-left-top-right span {
+        font-size: 0.9rem;
+        line-height: 1rem;
+        letter-spacing: 0.15rem;
+    }
+
+    #hero-left-top-right span:nth-child(1) {
+        padding-top: 0;
+    }
+
+    #hero-left-top-right span:nth-last-child(1) {
+        padding-top: 0;
+    }
+
+    /* Main title area */
+    /* #hero-left-bottom {
+        height: auto;
+        padding: 1.5rem 5%;
+        justify-content: center;
+        gap: 1.5rem;
+    } */ /* This rule is now part of the grid reordering */
+
+    #hero-left-bottom #main-title {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #hero-left-bottom #main-title #name {
+        font-size: 5.5rem;
+        line-height: 5.5rem;
+        text-align: center;
+    }
+
+    #hero-left-bottom .line {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    #hero-left-bottom #main-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    #hero-left-bottom #main-links #buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+        width: 80%;
+    }
+
+    #hero-left-bottom #main-links #buttons button {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.05rem !important;
+        padding: 1rem 1.5rem;
+        border-radius: 2rem !important;
+    }
+
+    /* Hero middle — horizontal row */
+    /* #hero-middle {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0.8rem 5%;
+        gap: 0.2rem;
+        background: #0d0d0d;
+        order: 2;
+        border-top: 1px solid rgba(255, 235, 59, 0.15);
+        border-bottom: 1px solid rgba(255, 235, 59, 0.15);
+    } */ /* This rule is now part of the grid reordering */
+
+    #hero-middle span {
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+        letter-spacing: 0.1rem;
+    }
+
+    #hero-middle span:nth-last-child(1) {
+        padding-top: 0;
+    }
+
+    /* Hero right */
+    /* #hero-right {
+        width: 100%;
+        height: auto;
+        order: 3;
+        background: #0d0d0d;
+    } */ /* This rule is now part of the grid reordering */
+
+    /* #hero-right-top {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+        padding: 0.8rem 5%;
+        border-bottom: 1px solid rgba(255, 235, 59, 0.15);
+    } */ /* This rule is now part of the grid reordering */
+
+    #hero-right-top span {
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+        letter-spacing: 0.1rem;
+    }
+
+    #hero-right-top span:nth-last-child(1) {
+        padding-top: 0;
+    }
+
+    /* #hero-right-bottom {
+        height: auto;
+        padding: 1.5rem 5%;
+        font-size: 0.85rem;
+        line-height: 1.4rem;
+        text-align: center;
+        align-items: center;
+    } */ /* This rule is now part of the grid reordering */
+
+    #hero-wrapper-2 {
+        height: 2rem;
+    }
+
+    /* Disable sticky scroll effects on mobile */
+    .lag-scroll {
+        position: relative !important;
+    }
+
+    #intro-section .intro-content {
+        position: relative !important;
+    }
+
+    /* ===========================
+       INTRO SECTIONS — Center-aligned stacked
+       =========================== */
+    #intro-section .intro-content {
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 3rem 5%;
+        border-radius: 2rem;
+        gap: 2rem;
+    }
+
+    #intro-section #event-partners-intro {
+        flex-direction: column-reverse !important;
+    }
+
+    #intro-section .intro-content .intro-image {
+        width: 100%;
+        height: auto;
+    }
+
+    #intro-section .intro-content .intro-image img {
+        border-radius: 1rem;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    #intro-section .intro-content .intro-text {
+        width: 100%;
+    }
+
+    #intro-section .intro-content .intro-text .intro-text-description {
+        gap: 1.5rem;
+        align-items: center !important;
+    }
+
+    #intro-section .intro-content .intro-text .intro-text-description .main-title {
+        justify-content: center !important;
+        gap: 1rem;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    #intro-section .intro-content .intro-text .intro-text-description .main-title .horr-line {
+        display: none !important;
+    }
+
+    #intro-section .intro-content .intro-text .intro-text-description .main-title .title {
+        font-size: 2.2rem;
+        line-height: 2.5rem;
+        text-align: center !important;
+    }
+
+    #intro-section .intro-content .intro-text .intro-text-description .description {
+        gap: 1.5rem;
+        align-items: center !important;
+    }
+
+    #intro-section .intro-content .intro-text .intro-text-description .description span {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        text-align: center !important;
+    }
+
+    #intro-section .intro-content .intro-text .intro-text-description .description button {
+        align-self: center !important;
+    }
+
+    /* ===========================
+       MARQUEE
+       =========================== */
+    .marquee-item {
+        font-size: 3.5rem;
+        line-height: 5rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    #marquee-container {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    /* ===========================
+       FAQ SECTION
+       =========================== */
+    #faq-section {
+        padding: 3rem 5%;
+        border-radius: 2rem;
+    }
+
+    #faq-title {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    #faq-wrapper {
+        flex-direction: column;
+        height: auto;
+        gap: 1.5rem;
+    }
+
+    #faq-type-selector {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    #faq-type-selector div {
+        font-size: 0.85rem;
+        line-height: 1rem;
+        width: auto;
+        padding: 0.6rem 1.2rem;
+        border: 1px solid rgba(255, 238, 88, 0.2);
+        border-radius: 2rem;
+        text-align: center;
+    }
+
+    #faq-type-selector .selected {
+        border-color: rgba(255, 238, 88, 0.6);
+        background: rgba(255, 238, 88, 0.08);
+    }
+
+    .faqs {
+        width: 100%;
+        height: auto;
+        max-height: 55vh;
+        padding-right: 0;
+    }
+
+    .faq-item {
+        padding: 1.2rem;
+        margin: 0 0 1rem 0;
+        border-radius: 0.75rem;
+    }
+
+    .question-wrapper {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+    }
+
+    .faq-answer {
+        font-size: 0.85rem;
+        line-height: 1.2rem;
+    }
+
+    /* ===========================
+       CONTACT US MINI
+       =========================== */
+    #contact-us-mini {
+        padding: 0 5%;
+    }
+
+    #contact-us-mini-content {
+        flex-direction: column;
+        height: auto;
+        border-radius: 0.2rem 0.2rem 3rem 3rem;
+        padding: 2rem 1.5rem;
+    }
+
+    #contact-us-mini-image {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    #contact-us-mini-image img {
+        width: 180px;
+    }
+
+    #contact-us-mini-wrapper {
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    #contact-us-mini-text span {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #contact-us-mini-text span:nth-child(3) {
+        font-size: 0.85rem;
+    }
+
+    /* ===========================
+       BRANDS / CREATORS / EVENT PARTNERS
+       Hero sections — stacked & centered
+       =========================== */
+    #title-section {
+        padding: 0 5%;
+    }
+
+    #title-section div span {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        padding: 4% 0;
+    }
+
+    #br-hero-section,
+    #cr-hero-section,
+    #ep-hero-section {
+        flex-direction: column;
+        padding: 3% 5%;
+        gap: 2rem;
+    }
+
+    #br-hero-left,
+    #cr-hero-left,
+    #ep-hero-left {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    #br-hero-right,
+    #cr-hero-right,
+    #ep-hero-right {
+        width: 100%;
+    }
+
+    #br-hero-left-top,
+    #cr-hero-left-top,
+    #ep-hero-left-top {
+        justify-content: center;
+    }
+
+    #br-hero-left-top-title,
+    #cr-hero-left-top-title,
+    #ep-hero-left-top-title {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        text-align: center;
+    }
+
+    #br-hero-left-bottom-text,
+    #cr-hero-left-bottom-text,
+    #ep-hero-left-bottom-text {
+        text-align: center;
+    }
+
+    #br-hero-left-bottom-btns,
+    #cr-hero-left-bottom-btns,
+    #ep-hero-left-bottom-btns {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    #br-hero-left-bottom-btns button,
+    #cr-hero-left-bottom-btns button,
+    #ep-hero-left-bottom-btns button {
+        width: 80%;
+    }
+
+    /* Main content cards */
+    #br-main-content,
+    #cr-main-content,
+    #ep-main-content {
+        padding: 8% 5%;
+        border-radius: 2rem;
+    }
+
+    #br-main-content-title,
+    #cr-main-content-title,
+    #ep-main-content-title {
+        align-items: center;
+    }
+
+    #br-main-content-title span:nth-child(1),
+    #cr-main-content-title span:nth-child(1),
+    #ep-main-content-title span:nth-child(1) {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        text-align: center;
+    }
+
+    #br-main-content-title span:nth-child(2),
+    #cr-main-content-title span:nth-child(2),
+    #ep-main-content-title span:nth-child(2) {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        text-align: center;
+    }
+
+    /* Swiper cards */
+    .br-card-text,
+    .cr-card-text,
+    .ep-card-text {
+        text-align: center;
+    }
+
+    .br-card-image img,
+    .cr-card-image img,
+    .ep-card-image img {
+        border-radius: 1rem;
+    }
+
+    /* Scroll arrows */
+    .scroll-left-right {
+        justify-content: center;
+    }
+
+    .scroll-left-right span {
+        padding: 0.75rem;
+        font-size: 1.5rem;
+    }
+
+    /* Requirements */
+    #br-requirements,
+    #cr-requirements,
+    #ep-requirements {
+        padding: 8% 5%;
+    }
+
+    #br-requirements-content,
+    #cr-requirements-content,
+    #ep-requirements-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    #br-requirements-content span:nth-child(1),
+    #cr-requirements-content span:nth-child(1),
+    #ep-requirements-content span:nth-child(1) {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        text-align: center;
+    }
+
+    #br-requirements-content span:nth-child(2),
+    #cr-requirements-content span:nth-child(2),
+    #ep-requirements-content span:nth-child(2) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: center;
+    }
+
+    #br-requirements-content span:nth-child(2) span,
+    #cr-requirements-content span:nth-child(2) span,
+    #ep-requirements-content span:nth-child(2) span {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #br-requirements-list,
+    #cr-requirements-list,
+    #ep-requirements-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+        justify-items: center;
+        align-items: stretch;
+    }
+
+    #br-requirements-list div,
+    #cr-requirements-list div,
+    #ep-requirements-list div {
+        flex-direction: column !important;
+        padding: 1.25rem 0.5rem !important;
+        font-size: 0.85rem !important;
+        border-radius: 0.75rem !important;
+        width: 100%;
+        text-align: center;
+        gap: 0.75rem !important;
+        line-height: 1.2rem !important;
+        white-space: normal !important;
+    }
+
+    #br-requirements-list div i,
+    #cr-requirements-list div i,
+    #ep-requirements-list div i {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.25rem;
+        color: rgba(255, 235, 59, 1);
+    }
+
+    /* Conclusion sections */
+    #br-conclusion,
+    #cr-conclusion,
+    #ep-conclusion {
+        height: auto;
+        min-height: 50svh;
+    }
+
+    #br-conclusion video,
+    #cr-conclusion video,
+    #ep-conclusion video {
+        height: 100%;
+        min-height: 50svh;
+    }
+
+    #br-conclusion-content,
+    #cr-conclusion-content,
+    #ep-conclusion-content {
+        height: auto;
+        min-height: 50svh;
+        padding: 3rem 5%;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+    }
+
+    #br-conclusion-content span:nth-child(1),
+    #cr-conclusion-content span:nth-child(1),
+    #ep-conclusion-content span:nth-child(1) {
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+    }
+
+    #br-conclusion-content span:nth-child(2),
+    #br-conclusion-content span:nth-child(3),
+    #cr-conclusion-content span:nth-child(2),
+    #cr-conclusion-content span:nth-child(3),
+    #ep-conclusion-content span:nth-child(2),
+    #ep-conclusion-content span:nth-child(3) {
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+    }
+
+    /* ===========================
+       CORPORATE SPONSORS (Event Partners)
+       =========================== */
+    #ep-corporate-sponsors {
+        padding: 8% 5%;
+    }
+
+    #ep-corporate-sponsors-body {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #ep-corporate-sponsors-title {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        text-align: center;
+    }
+
+    #ep-corporate-sponsors-description {
+        text-align: center;
+    }
+
+    #ep-corporate-sponsors-btns {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    #ep-corporate-sponsors-btns button {
+        width: 80%;
+    }
+
+    /* Event registration CTA */
+    #ep-event-registration {
+        padding: 0 5%;
+    }
+
+    #ep-event-registration-content {
+        border-radius: 0 0 3rem 3rem;
+        padding: 2rem 1.5rem;
+    }
+
+    #ep-event-registration-title {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+
+    #ep-event-registration-description {
+        font-size: 0.85rem;
+    }
+
+    /* ===========================
+       SCHEDULE A MEET — Stacked & centered
+       =========================== */
+    #schedule-a-meet-container {
+        flex-direction: column;
+        padding: 2rem 5%;
+        gap: 2rem;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #why-schedule-a-meet {
+        width: 100%;
+        height: auto;
+        border-radius: 2rem;
+        padding: 2.5rem 1.5rem;
+    }
+
+    #why-text {
+        gap: 2rem;
+        width: 100%;
+    }
+
+    #why-logo {
+        justify-content: center;
+    }
+
+    #why-slogan {
+        align-items: center;
+    }
+
+    #why-slogan span {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        text-align: center;
+    }
+
+    #why-slogan #why-disclaimer {
+        text-align: center;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    #why-extra {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #why-extra button {
+        width: 100%;
+        padding: 1rem;
+        font-weight: 600;
+    }
+
+    #schedule-the-meet {
+        width: 100%;
+        padding: 0;
+        gap: 1.5rem;
+        overflow: hidden;
+    }
+
+    #schedule-the-meet #title {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+    #schedule-the-meet #description span {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        padding: 0 0.5rem;
+    }
+
+    #schedule-the-meet form {
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    #schedule-the-meet form .input-inliner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #schedule-the-meet form .input-box {
+        width: 100%;
+    }
+
+    #schedule-the-meet form button {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* ===========================
+       SIGN IN — Stacked & centered
+       =========================== */
+    #sign-in-section {
+        flex-direction: column;
+        padding: 2rem 5%;
+        gap: 2rem;
+    }
+
+    #sign-in-hint {
+        width: 100%;
+        height: auto;
+        border-radius: 2rem;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    #sign-in-hint-text {
+        gap: 2rem;
+    }
+
+    #sign-in-hint-slogan span {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    #sign-in-hint-description {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #sign-in-form {
+        width: 100%;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    #sign-in-form #title {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+    #sign-in-form #direct-sign-in #google-sign-in {
+        padding: 1rem 1.5rem;
+    }
+
+    /* ===========================
+       SIGN UP
+       =========================== */
+    #sign-up-section {
+        flex-direction: column;
+        padding: 2rem 5%;
+        gap: 2rem;
+    }
+
+    #sign-up-hint {
+        width: 100%;
+        height: auto;
+        border-radius: 2rem;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    #sign-up-hint-text {
+        gap: 2rem;
+    }
+
+    #sign-up-hint-slogan span {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    #sign-up-form {
+        width: 100%;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    #sign-up-form #title {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+    /* ===========================
+       OTP
+       =========================== */
+    #otp-section {
+        flex-direction: column;
+        padding: 2rem 5%;
+        gap: 2rem;
+    }
+
+    #otp-hint {
+        width: 100%;
+        height: auto;
+        border-radius: 2rem;
+        padding: 2rem;
+    }
+
+    #otp-hint-slogan span {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    #otp-form {
+        width: 100%;
+        padding: 0;
+    }
+
+    #otp-form #title {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+    /* ===========================
+       CONTACT US
+       =========================== */
+    #contact-us-container {
+        flex-direction: column;
+        padding: 2rem 5%;
+        gap: 2rem;
+    }
+
+    #contact-us-card {
+        width: 100%;
+        height: auto;
+        border-radius: 2rem;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    #contact-us-card #slogan span {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    #contact-us-card #extras {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #contact-us-form {
+        width: 100%;
+        padding: 0;
+    }
+
+    #contact-us-form #contact-us-title {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+    /* ===========================
+       FOOTER — Stacked & centered
+       =========================== */
+    #footer-top {
+        flex-direction: column;
+        padding: 2.5rem 5%;
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    #footer-top-left {
+        align-items: center;
+    }
+
+    #footer-top-left-top {
+        flex-direction: column;
+        gap: 0.25rem;
+        align-items: center;
+    }
+
+    #footer-top-left-top #footer-brands,
+    #footer-top-left-top #footer-creators {
+        margin: 0;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+
+    #footer-top-left-top #footer-logo {
+        margin: 0.3rem 0;
+    }
+
+    footer img {
+        width: 3rem;
+    }
+
+    #footer-top-left-bottom {
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    #footer-top-left-bottom span:first-child {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        text-align: center;
+    }
+
+    #footer-top-left-bottom span {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    #footer-schedule-a-meet {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    #footer-links {
+        align-items: center;
+    }
+
+    #footer-links #footer-quick-links {
+        align-items: center;
+    }
+
+    #footer-quick-links span {
+        text-align: center;
+    }
+
+    #footer-quick-links a {
+        text-align: center;
+    }
+
+    #footer-socials {
+        justify-content: center;
+    }
+
+    #footer-newsletters {
+        align-items: center;
+        width: 100%;
+    }
+
+    #footer-newsletters-title {
+        text-align: center;
+    }
+
+    #footer-newsletters-form form {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    #footer-newsletters-form input {
+        width: 100%;
+    }
+
+    footer p {
+        font-size: 0.7rem;
+        padding: 0.5rem 5%;
+        line-height: 1.2rem;
+    }
+}
+

@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}OPC | Brands{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="/static/css/brands.css">
+<link rel="stylesheet" href="/static/images/favicons/favicon.ico">
+{% endblock %}
+
+
+{% block content %}
+<!-- Title Section Start -->
+    <section id="title-section">
+        <div>
+            <span>Connecting your brand with the right voices</span>
+        </div>
+    </section>
+    <!-- Title Section End -->
+
+    <!-- Hero Section Start -->
+    <section id="br-hero-section">
+        <div id="br-hero-left">
+            <div id="br-hero-left-top">
+                <div id="br-hero-left-top-title">BRANDS,</div>
+            </div>
+            <div id="br-hero-left-bottom">
+                <div id="br-hero-left-bottom-text">
+                    At OPC, we understand that today’s consumers trust people more than ads. That’s why we help brands
+                    like yours partner with influencers who can authentically tell your story, amplify your message, and
+                    build genuine trust with your target audience.
+                </div>
+                <div id="br-hero-left-bottom-btns">
+                    <button type="button" id="brands-schedule-a-meet-btn">SCHEDULE A MEET <i
+                            class='bx  bx-arrow-right-stroke'></i></button>
+                    <a href="./terms-and-conditions.html">OUR TERMS & CONDITIONS</a>
+                </div>
+            </div>
+        </div>
+        <div id="br-hero-right">
+            <img src="/static/images/brands-promo-1.png" alt="Brands Hero Image" />
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Main Content Start -->
+    <section id="br-main-content">
+        <div id="br-main-content-title">
+            <span>Why work with us?</span>
+            <span>Here's a glimpse of the many perks you’ll enjoy when you <a href="./sign-in.html">join us.</a></span>
+        </div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="br-card-image">
+                        <img src="/static/images/brands-why-us-1.png" alt="">
+                    </div>
+                    <div class="br-card-text">
+                        <span>Access to the right influencers.</span>&nbsp;We carefully match your brand with
+                        influencers who align with your industry, values, and audience — ensuring genuine engagement and
+                        maximum ROI.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="br-card-image">
+                        <img src="/static/images/brands-why-us-2.png" alt="">
+                    </div>
+                    <div class="br-card-text">
+                        <span>Seamless sponsor collaboration.</span>&nbsp;Alongside influencers, we also connect you
+                        with sponsors that can further support and amplify your campaigns.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="br-card-image">
+                        <img src="/static/images/brands-why-us-3.png" alt="">
+                    </div>
+                    <div class="br-card-text">
+                        <span>End-to-end campaign management.</span>&nbsp;From campaign ideation and influencer
+                        shortlisting to contract negotiations, execution, and performance tracking — we handle it all.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="br-card-image">
+                        <img src="/static/images/brands-why-us-4.png" alt="">
+                    </div>
+                    <div class="br-card-text">
+                        <span>Data driven results.</span>&nbsp;We provide you with clear insights and analytics to
+                        measure success, refine strategies, and scale effectively.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="br-card-image">
+                        <img src="/static/images/brands-why-us-5.png" alt="">
+                    </div>
+                    <div class="br-card-text">
+                        <span>Cost effective and transparent.</span>&nbsp;Our approach ensures value for every rupee
+                        spent, with transparent processes and fair deals.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-left-right">
+            <span class="scroll-left"><i class='bx  bx-chevron-left'></i></span>
+            <span class="scroll-right"><i class='bx  bx-chevron-right'></i></span>
+        </div>
+    </section>
+    <!-- Main Content End -->
+
+    <!-- Requirements Start -->
+    <section id="br-requirements">
+        <div id="br-requirements-content">
+            <span>Who can partner with us?</span>
+            <span>We work with brands of all sizes — from startups looking to build awareness to established companies
+                wanting to strengthen customer trust and loyalty.&nbsp;<span>A few of the many industries that we cater
+                    to, includes:</span></span>
+        </div>
+        <div id="br-requirements-list">
+            <div><i class='bx  bx-dumbbell-alt'></i> Health & Fitness</div>
+            <div><i class='bx  bx-devices'></i> Technology & Gadgets</div>
+            <div><i class='bx  bx-book-bookmark'></i> Education & E-learning</div>
+            <div><i class='bx  bx-burger'></i> Food & Beverages</div>
+            <div><i class='bx  bx-shopping-bag'></i> Fashion & Lifestyle</div>
+            <div><i class='bx  bx-tv'></i> Entertainment & Media</div>
+        </div>
+        <!-- <div id="br-many-more">
+            <span>Check the full list</span><i class='bx  bx-chevron-right'  ></i>
+        </div> -->
+    </section>
+    <!-- Requirements End -->
+
+    <!-- Conclusion Start -->
+    <section id="br-conclusion">
+        <video src="/static/videos/br-bg.mp4" loop muted autoplay></video>
+        <div id="br-conclusion-content">
+            <span>Let's grow together!</span><span>With our ecosystem of creators and sponsors, your brand gains
+                visibility, trust, and results. Whether you’re launching a product, promoting an event, or building
+                long-term brand identity,</span><span>we are here to make it happen.</span>
+        </div>
+    </section>
+    <!-- Conclusion End -->
+{% endblock %}
+
+
+{% block script %}
+<script src="https://www.googletagmanager.com/gtag/js?id=G-RF9XCV2ZMN"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="/static/js/brands.js"></script>
+{% endblock %}

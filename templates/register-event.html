@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}OPC | Register Your Event{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="/static/css/register-event.css">
+<link rel="stylesheet" href="/static/images/favicon.ico">
+{% endblock %}
+
+
+{% block content %}
+<!-- Register Event Start -->
+    <section id="register-event-container">
+        <div id="register-event-card">
+            <div id="logo">
+                <img src="/static/images/logo.png" alt="OPC Logo" />
+                <span>Own Professional Collaboration</span>
+            </div>
+            <div id="slogan">
+                <span>join hands with OPC to elevate your event's reach</span>
+                <span>make an impact by connecting with top brands and artists.</span>
+                <span id="disclaimer">
+                    * for full access to our network for your event, you need to sign in.
+                </span>
+            </div>
+            <div id="extras">
+                <span>Want access our exclusive network. Try <button type="button"
+                        id="register-event-sign-in-btn">SIGNING IN <i
+                            class='bx  bx-arrow-right-stroke'></i></button></span>
+            </div>
+        </div>
+        <div id="register-event-form">
+            <span id="title">
+                Event details
+            </span>
+            <form>
+                <div class="input-box">
+                    <input type="text" id="event-name" name="event-name" placeholder="" required />
+                    <label for="event-name">Event Name *</label>
+                </div>
+                <div class="input-inliners">
+                    <div class="input-box">
+                        <input type="datetime-local" id="event-start-date" name="event-start-date" placeholder=""
+                            required />
+                        <label for="event-start-date">Start Date *</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="datetime-local" id="event-end-date" name="event-end-date" placeholder=""
+                            required />
+                        <label for="event-end-date">End Date *</label>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="event-organizer" name="event-organizer" placeholder="" required />
+                    <label for="event-organizer">Organizers *</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="event-location" name="event-location" placeholder="" required />
+                    <label for="event-location">Location *</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" id="poc-email" name="poc-email" placeholder="" required />
+                    <label for="poc-email">POC Email *</label>
+                </div>
+                <div class="input-inliners">
+                    <div class="input-box">
+                        <input type="text" id="poc-name" name="poc-name" placeholder="" required />
+                        <label for="poc-name">POC Name *</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" id="poc-phone" name="poc-phone" placeholder="" required />
+                        <label for="poc-phone">POC Phone Number *</label>
+                    </div>
+                </div>
+                <button type="submit" id="register-event-submit-btn">REGISTER EVENT <i
+                        class='bx  bx-arrow-right-stroke'></i></button>
+            </form>
+        </div>
+    </section>
+    <!-- Register Event End -->
+{% endblock %}
+
+
+{% block script %}
+<script src="https://www.googletagmanager.com/gtag/js?id=G-RF9XCV2ZMN"></script>
+<script type="module" src="/static/js/register-event.js"></script>
+{% endblock %}

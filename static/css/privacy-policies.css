@@ -1,0 +1,109 @@
+#privacy-policy-container {
+    width: 100%;
+    padding: 5% 10% 0 10%;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* Header Section */
+.privacy-header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+    padding-bottom: 20px;
+}
+
+.privacy-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(255, 235, 59, 0.5);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.privacy-header .last-updated {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+/* Content Typography */
+.privacy-content h2 {
+    font-size: 1.8rem;
+    color: rgba(255, 235, 59, 0.5);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.privacy-content h3 {
+    font-size: 1.3rem;
+    color: rgba(255, 235, 59, 0.5);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.privacy-content h4 {
+    font-size: 1.1rem;
+    color: rgba(255, 235, 59, 0.5);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.privacy-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Lists Styling */
+.privacy-content ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.privacy-content ul li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+.privacy-content strong {
+    font-weight: 600;
+    color: rgba(255, 235, 59, 0.5);
+}
+
+/* Links */
+.privacy-content a {
+    color: rgba(255, 235, 59, 0.5);
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.privacy-content a:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #privacy-policy-container {
+        padding: 40px 15px;
+    }
+
+    .privacy-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .privacy-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .privacy-content h3 {
+        font-size: 1.2rem;
+    }
+}

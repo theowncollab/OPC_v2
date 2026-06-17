@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}OPC | Sign In{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="/static/css/sign-in.css">
+<link rel="stylesheet" href="/static/images/favicons/favicon.ico">
+{% endblock %}
+
+
+{% block content %}
+<!-- Sign-In Section Start -->
+<section id="sign-in-section">
+    <section id="sign-in-hint">
+        <div id="sign-in-hint-text">
+            <div id="sign-in-hint-logo">
+                <img src="/static/images/logo.png" alt="OPC Logo" />
+                <span>Own Professional Collaboration</span>
+            </div>
+            <div id="sign-in-hint-slogan">
+                <span>where creators and brands</span>
+                <span>collaborate, not just connect!</span>
+            </div>
+            <div id="sign-in-hint-description">
+                <span>Not satisfied yet?</span><button type="button" id="sign-in-schedule-a-meet-btn">SCHEDULE A
+                    MEET <i class='bx  bx-arrow-right-stroke'></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="sign-in-form">
+        <div id="title">Sign In As</div>
+        <div id="direct-sign-in">
+            <div id="choose-user-type">
+                <div id="types">
+                    <span class="type"><i class='bx bx-store-alt'></i> Brand</span>
+                    <span class="type"><i class='bx bx-palette'></i> Creator</span>
+                    <span class="type"><i class='bx bx-calendar-star'></i> Event Partner</span>
+                </div>
+            </div>
+            <div id="google-sign-in-label">With</div>
+            <div id="google-sign-in">
+                <div id="google-sign-in-btn"><i class='bxl  bx-google'></i> Google</div>
+                <div id="g_id_signin"></div>
+                <div id="google-sign-in-overlay"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; cursor: pointer;">
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<!-- Sign-In Section End -->
+{% endblock %}
+
+
+{% block script %}
+<script src="https://www.googletagmanager.com/gtag/js?id=G-RF9XCV2ZMN"></script>
+<script src="https://accounts.google.com/gsi/client"></script>
+<script type="module" src="/static/js/sign-in.js"></script>
+{% endblock %}
