@@ -3,14 +3,14 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF9XCV2ZMN"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF9XCV2ZMN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-RF9XCV2ZMN');
-    </script> -->
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
@@ -25,6 +25,9 @@
     <link rel="icon" type="image/x-icon" href="/static/images/favicons/favicon.ico">
     <script>
         window.API_BASE_URL = "{{ API_BASE_URL }}";
+        window.WEB_APP_URL = "{{ WEB_APP_URL }}";
+        window.DASHBOARD_URL = "{{ DASHBOARD_URL }}";
+        window.GSCRIPT_URL = "{{ GSCRIPT_URL }}";
     </script>
     <title>{% block title %}OPC{% endblock %}</title>
     {% block style %}{% endblock %}

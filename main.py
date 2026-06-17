@@ -56,7 +56,7 @@ def render_template(request: Request, template_name: str):
     return templates.TemplateResponse(
         request=request,
         name=template_name,
-        context={"API_BASE_URL": os.getenv("API_BASE_URL"), "GSCRIPT_URL": os.getenv("GSCRIPT_URL")}
+        context={"API_BASE_URL": os.getenv("API_BASE_URL"), "GSCRIPT_URL": os.getenv("GSCRIPT_URL"), "WEB_APP_URL": os.getenv("WEB_APP_URL"), "DASHBOARD_URL": os.getenv("DASHBOARD_URL")}
     )
 
 @app.get("/")
