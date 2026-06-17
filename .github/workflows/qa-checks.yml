@@ -1,0 +1,28 @@
+name: Quality Assurance Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+      - staging
+
+jobs:
+  flake8-lint:
+    name: Code Quality Check (flake8)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11" # Change to match your project's version if needed
+
+      - name: Install flake8
+        run: pip install flake8
+
+      - name: Run flake8
+        # We run flake8 on the current directory. We ignore E501 (Line too long) to not block PRs unnecessarily.
+        # You can add more strict rules later as your project matures.
+        run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
