@@ -62,7 +62,7 @@ function registerEventFormData() {
 async function sendDataToServer(formData) {
     try {
         showBtnPreLoader(registerEventSubmitBtn, true, '');
-        const response = await fetch(`${window.API_BASE_URL}/register-event`, {
+        const response = await fetch('/register-event', {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("access_token")}`,
